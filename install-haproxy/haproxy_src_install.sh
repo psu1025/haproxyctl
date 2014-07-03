@@ -71,14 +71,14 @@ if [ -e /usr/local/haproxyctl ]; then
   cd haproxyctl;
   git pull;
 else
-  git clone https://github.com/flores/haproxyctl.git
+  git clone https://github.com/psu1025/haproxyctl.git
   ln -s /usr/local/haproxyctl/haproxyctl /etc/init.d/haproxyctl
 fi
 
 # remove make and gcc
 if [ $OS = 'redhat' ]; then
 	chkconfig --add haproxyctl;
-	yum remove -y gcc make
+	#yum remove -y gcc make
 elif [ $OS = 'debian' ]; then
 	apt-get purge -y build-essential
 fi
