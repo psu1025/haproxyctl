@@ -20,7 +20,7 @@ elif [ "x$(cat /etc/system-release | grep Amazon)" != "x" ]; then
 fi
 
 if [ $OS ]; then
-	if [ $OS = 'redhat' ] || [ $OS == 'amazon'] ; then
+	if [ $OS = 'redhat' ] || [ $OS = 'amazon' ] ; then
 		yum install -y pcre-devel make gcc libgcc git;
 	elif [ $OS = 'debian' ]; then
 		apt-get update;
