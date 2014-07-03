@@ -15,10 +15,12 @@ if [ -e /etc/redhat-release ]; then
 	OS=redhat;
 elif [ -e /etc/debian_version ]; then
 	OS=debian;
+elif [ "x$(cat /etc/system-release | grep Amazon)" != "x" ]; then
+    OS=amazon;
 fi
 
 if [ $OS ]; then
-	if [ $OS = 'redhat' ]; then
+	if [ $OS = 'redhat' ] || [ $OS == 'amazon'] ; then
 		yum install -y pcre-devel make gcc libgcc git;
 	elif [ $OS = 'debian' ]; then
 		apt-get update;
@@ -76,7 +78,7 @@ else
 fi
 
 # remove make and gcc
-if [ $OS = 'redhat' ]; then
+if [ $OS = 'redhat' ] || [ $OS == 'amazon'] ; then
 	chkconfig --add haproxyctl;
 	#yum remove -y gcc make
 elif [ $OS = 'debian' ]; then
