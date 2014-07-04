@@ -6,7 +6,7 @@
 # quick and dirty (but sometimes handy) installer.
 #
 
-HAPROXYVER="1.5.0"
+HAPROXYVER="1.5.1"
 MD5EXPECTED="e33bb97e644e98af948090f1ecebbda9"
 STARTINGDIR=$PWD
 
