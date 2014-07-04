@@ -7,7 +7,7 @@
 #
 
 HAPROXYVER="1.5.1"
-MD5EXPECTED="e33bb97e644e98af948090f1ecebbda9"
+MD5EXPECTED="49640cf3ddd793a05fbd3394481a1ed4"
 STARTINGDIR=$PWD
 
 # make sure we have make, pcre and junk
